@@ -11,7 +11,7 @@ export class LoginPage extends BasePage {
       this.password = page.locator('[data-test="login_password"]').locator("input")
       this.loginButton = page.locator('[data-test="login_submit"]')
   }
-    async open() {
+    async open(path?: string) {
         await super.open("/users/sign_in")
     }
 

@@ -22,7 +22,9 @@ export class BasePage {
     }
 
     async removeCookieBanner(): Promise<void> {
-        await this.acceptCookieButton.waitFor()
-        await this.acceptCookieButton.click()
+        if ( await this.acceptCookieButton.isVisible({timeout: 3000})){
+            await this.acceptCookieButton.click()
+        }
+
     }
 }
